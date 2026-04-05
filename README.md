@@ -1,7 +1,8 @@
 # Weather Data Lakehouse Pipeline on Azure
 
 ## Overview
-This project is built to practice and understand how a real-world data engineering pipeline works on Azure. It focuses on setting up an end-to-end lakehouse architecture using Data Factory and Databricks.
+This project demonstrates an end-to-end data engineering pipeline on Azure, simulating a real-world lakehouse architecture.
+It integrates data ingestion, transformation, and analytics using Azure Data Factory and Azure Databricks, following the Medallion Architecture (Bronze, Silver, Gold).
 
 ## Architecture
 Weather API → Azure Data Factory → Azure Databricks → Delta Lake (Bronze, Silver, Gold) → Power BI
@@ -34,6 +35,21 @@ This project is designed to run on Azure Databricks.
 - Prepare aggregated data for reporting
 - Optimize data for Power BI usage
 
+## Project Structure
+weather-azure-databricks-lakehouse-pipeline/
+├── aggregation/
+│   ├── weather_aggregated.py
+│
+├── ingestion/
+│   ├── api_call.py
+│
+├── transformation/
+│   ├── weather_processed.py
+│
+├── includes/
+│   ├── common_functions.py
+│   └── configuration.py
+
 ## Output
 - Analytics-ready dataset
 - Simple Power BI dashboard
@@ -41,4 +57,5 @@ This project is designed to run on Azure Databricks.
 ## Key Learnings
 - Built incremental data ingestion pipeline using Data Factory
 - Practiced Medallion Architecture in Databricks
+- Applied Delta Lake for scalable data processing
 - Explored data governance with Unity Catalog
